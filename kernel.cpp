@@ -1,4 +1,8 @@
 
+/* Because boot env does not have access to any libraries, printf function must be
+created from scratch by placing chars into the 0xb8000 memory location (which are 
+automagically displayed onto the monitor) */
+
 void printf(char* str)
 {
 	unsigned short* VideoMemory = (unsigned short*)0xb8000;
